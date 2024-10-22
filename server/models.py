@@ -61,8 +61,8 @@ class Review(db.Model, SerializerMixin):
     item_id =  db.Column(db.Integer, db.ForeignKey('items.id'))
 
     # Relationship mapping the Review to related customer
-    customer = db.Relationship('Customer', back_populates='reviews')
+    customer = db.relationship('Customer', back_populates='reviews')
 
     # Relationship mapping the Review to related item
-    item = db.Relationship('Item', back_populates='reviews')
+    item = db.relationship('Item', back_populates='reviews')
 
